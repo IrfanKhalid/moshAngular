@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl,FormGroup} from '@angular/forms';
+import {UserValidators} from '../shared/Validators';
+import {FormControl,FormGroup,Validators} from '@angular/forms';
 @Component({
   selector: 'app-loginform',
   templateUrl: './loginform.component.html',
@@ -8,9 +9,16 @@ import {FormControl,FormGroup} from '@angular/forms';
 export class LoginformComponent implements OnInit {
 
    form=new FormGroup({
-    userName:new FormControl(),
-    pasword:new FormControl()
-});
+    userName:new FormControl('',[Validators.required,
+      Validators.minLength(4),
+      UserValidators.CanNotContainSpace],
+      UserValidators.UniqueName),
+    pasword:new FormControl('',Validators.required)
+    });
+
+    get userName(){
+      return this.form.get('userName');
+    }
   constructor() { }
 
   ngOnInit(): void {

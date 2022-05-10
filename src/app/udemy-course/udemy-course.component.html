@@ -1,9 +1,9 @@
 <form #f="ngForm" (ngSubmit)="checkdata(f.value)">
 <div class="form-group">
     <label for="cName">Course Name</label>
-    <input 
+    <input
     required
-    minlength="5" 
+    minlength="5"
     type="text"
     name="cName"
     #cName="ngModel"
@@ -25,7 +25,7 @@
 <div class="alert alert-danger" *ngIf="category.touched && category.errors?.['required']">Category is required.</div>
 </div>
 <div class="checkbox">
-<label >    
+<label >
 <input type="checkbox" name="catcheckbox" ngModel > 30-day Money back gurantee </label>
 </div>
 

@@ -28,9 +28,9 @@ import { LoginformComponent } from './loginform/loginform.component';
       {path:"udemy",component:UdemyCourseComponent},
       {path:"leaf",component:LeafComponent},
       {path:"leafWith:/",component:LeafWithParamComponent},
-      {path:"sinup",component:LoginformComponent},        
+      {path:"sinup",component:LoginformComponent},
     ])
-  ],  
+  ],
   providers: [],
 
   bootstrap: [AppComponent]
